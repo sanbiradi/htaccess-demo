@@ -1,0 +1,21 @@
+# Turn Rewrite Engine On
+RewriteEngine on
+#ErrorDocument 404 http://localhost/demo/htaccess1/index.php
+#RewriteBase /demo/
+#AuthType Basic
+#AuthName "Restricted Content"
+#AuthUserFile C:\xampp\htdocs\demo\htaccess1\.htpasswd
+#Require valid-user
+#Rewrite for projects.php
+#RewriteRule ^custom$ /htaccess1/index.php [NC,L]
+
+# NC makes the rule non case sensitive
+# L makes this the last rule that this specific condition will match
+# $ in the regular expression makes the matching stop so that "customblah" will not work
+
+# Rewrite for user.php?u=xxxxx
+RewriteRule ^user/([0-9a-zA-Z]+)$ user.php?u=$1 [NC,L]
+
+# Rewrite for article.php?id=1&title=Title-Goes-Here
+RewriteRule ^article/([0-9]+)/([0-9a-zA-Z_-]+)$ artical.php?id=$1&title=$2 [NC,L]
+#RewriteRule ^(.*)/$ /$1 [L,R=301]
