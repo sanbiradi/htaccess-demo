@@ -2,9 +2,9 @@
 RewriteEngine on
 #ErrorDocument 404 http://localhost/demo/htaccess1/index.php
 #RewriteBase /demo/
-#AuthType Basic
-#AuthName "Restricted Content"
-#AuthUserFile C:\xampp\htdocs\demo\htaccess1\.htpasswd
+AuthType Basic
+AuthName "Restricted Content"
+AuthUserFile .htpasswd
 #Require valid-user
 #Rewrite for projects.php
 #RewriteRule ^custom$ /htaccess1/index.php [NC,L]
